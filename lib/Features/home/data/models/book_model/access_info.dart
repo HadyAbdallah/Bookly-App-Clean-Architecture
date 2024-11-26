@@ -56,7 +56,6 @@ class AccessInfo {
         'quoteSharingAllowed': quoteSharingAllowed,
       };
 
-  @override
   List<Object?> get props {
     return [
       country,

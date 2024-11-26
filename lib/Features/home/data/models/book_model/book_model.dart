@@ -59,7 +59,6 @@ class BookModel extends BookEntity {
         'searchInfo': searchInfo?.toJson(),
       };
 
-  @override
   List<Object?> get props {
     return [
       kind,

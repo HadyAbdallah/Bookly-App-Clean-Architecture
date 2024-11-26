@@ -11,6 +11,5 @@ class Epub {
         'isAvailable': isAvailable,
       };
 
-  @override
   List<Object?> get props => [isAvailable];
 }

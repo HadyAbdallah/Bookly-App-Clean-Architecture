@@ -11,6 +11,5 @@ class Pdf {
         'isAvailable': isAvailable,
       };
 
-  @override
   List<Object?> get props => [isAvailable];
 }

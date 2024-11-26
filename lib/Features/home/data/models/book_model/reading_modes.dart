@@ -14,6 +14,5 @@ class ReadingModes {
         'image': image,
       };
 
-  @override
   List<Object?> get props => [text, image];
 }

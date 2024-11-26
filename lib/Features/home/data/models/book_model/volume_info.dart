@@ -101,7 +101,6 @@ class VolumeInfo {
         'canonicalVolumeLink': canonicalVolumeLink,
       };
 
-  @override
   List<Object?> get props {
     return [
       title,

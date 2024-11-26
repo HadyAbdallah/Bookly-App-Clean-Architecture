@@ -17,6 +17,5 @@ class SaleInfo {
         'isEbook': isEbook,
       };
 
-  @override
   List<Object?> get props => [country, saleability, isEbook];
 }

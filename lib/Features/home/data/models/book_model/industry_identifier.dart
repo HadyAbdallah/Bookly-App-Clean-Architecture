@@ -16,6 +16,5 @@ class IndustryIdentifier {
         'identifier': identifier,
       };
 
-  @override
   List<Object?> get props => [type, identifier];
 }

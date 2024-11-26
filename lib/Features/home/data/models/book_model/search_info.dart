@@ -11,6 +11,5 @@ class SearchInfo {
         'textSnippet': textSnippet,
       };
 
-  @override
   List<Object?> get props => [textSnippet];
 }

@@ -14,6 +14,5 @@ class ImageLinks {
         'thumbnail': thumbnail,
       };
 
-  @override
   List<Object?> get props => [smallThumbnail, thumbnail];
 }

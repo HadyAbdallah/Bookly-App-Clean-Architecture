@@ -19,6 +19,5 @@ class PanelizationSummary {
         'containsImageBubbles': containsImageBubbles,
       };
 
-  @override
   List<Object?> get props => [containsEpubBubbles, containsImageBubbles];
 }
