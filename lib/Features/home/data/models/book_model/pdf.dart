@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-class Pdf extends Equatable {
+class Pdf {
   final bool? isAvailable;
 
   const Pdf({this.isAvailable});

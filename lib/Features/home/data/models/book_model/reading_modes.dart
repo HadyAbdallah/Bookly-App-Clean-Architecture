@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-class ReadingModes extends Equatable {
+class ReadingModes {
   final bool? text;
   final bool? image;
 

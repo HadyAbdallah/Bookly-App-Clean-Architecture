@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-class SaleInfo extends Equatable {
+class SaleInfo {
   final String? country;
   final String? saleability;
   final bool? isEbook;

@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-class SearchInfo extends Equatable {
+class SearchInfo {
   final String? textSnippet;
 
   const SearchInfo({this.textSnippet});
