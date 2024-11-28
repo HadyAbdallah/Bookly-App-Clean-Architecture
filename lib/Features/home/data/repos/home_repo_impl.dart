@@ -5,6 +5,7 @@ import 'package:bookly_clear_arch/Features/home/domain/entities/book_entity.dart
 import 'package:bookly_clear_arch/core/errors/failure.dart';
 
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 import '../../domain/repos/home_repo.dart';
 
@@ -23,7 +24,10 @@ class HomeRepoImpl extends HomeRepo {
       }
       return Right(books);
     } catch (e) {
-      return Left(Failure());
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      }
+      return Left(ServerFailure(e.toString()));
     }
   }
 
@@ -36,7 +40,10 @@ class HomeRepoImpl extends HomeRepo {
       }
       return Right(books);
     } catch (e) {
-      return Left(Failure());
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      }
+      return Left(ServerFailure(e.toString()));
     }
   }
 }
