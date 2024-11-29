@@ -12,13 +12,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import 'core/utils/simple_bloc_observer.dart';
+
 void main() async {
   await Hive.initFlutter();
   setupServiceLocator();
   Hive.registerAdapter(BookEntityAdapter());
   await Hive.openBox<BookEntity>(kFeaturedBooks);
   await Hive.openBox<BookEntity>(kNewestBooks);
-
+  Bloc.observer = SimpleBlocObserver();
   runApp(const Bookly());
 }
 
