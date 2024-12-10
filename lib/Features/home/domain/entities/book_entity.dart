@@ -9,8 +9,14 @@ class BookEntity {
   final String titel;
   @HiveField(2)
   final String? authorName;
+  @HiveField(3)
+  final String? category;
+  @HiveField(4)
+  final String? pdfLink;
 
   BookEntity({
+    required this.category,
+    required this.pdfLink,
     required this.image,
     required this.titel,
     required this.authorName,

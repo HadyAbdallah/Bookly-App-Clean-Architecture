@@ -28,6 +28,8 @@ class BookModel extends BookEntity {
           image: volumeInfo.imageLinks?.thumbnail ?? '',
           titel: volumeInfo.title!,
           authorName: volumeInfo.authors?.first ?? '',
+          category: volumeInfo.categories?[0] ?? '',
+          pdfLink: volumeInfo.previewLink,
         );
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
