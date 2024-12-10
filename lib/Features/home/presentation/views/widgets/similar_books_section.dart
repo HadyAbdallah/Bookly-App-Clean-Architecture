@@ -2,6 +2,7 @@ import 'package:bookly_clear_arch/Features/home/presentation/views/widgets/simil
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
+import 'similar_books_list_view_bloc_consumer.dart';
 
 class SimilarBooksSection extends StatelessWidget {
   const SimilarBooksSection({super.key});
@@ -20,7 +21,7 @@ class SimilarBooksSection extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        const SimilarBooksListview(),
+        const SimilarBooksListViewBlocConsumer(),
       ],
     );
   }
