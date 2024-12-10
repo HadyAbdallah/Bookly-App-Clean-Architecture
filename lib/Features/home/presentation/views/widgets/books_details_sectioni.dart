@@ -1,3 +1,4 @@
+import 'package:bookly_clear_arch/Features/home/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -6,7 +7,8 @@ import 'books_action.dart';
 import 'custom_book_item.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  const BookDetailsSection({super.key, required this.book});
+  final BookEntity book;
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +20,19 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: width * .2,
           ),
-          child: const CustomBookImage(
-            image: "",
+          child: CustomBookImage(
+            image: book.image ?? '',
           ),
         ),
         const SizedBox(
           height: 43,
         ),
         Text(
-          'The Jungle Book',
+          book.titel,
           style: Styles.textStyle30.copyWith(
             fontWeight: FontWeight.bold,
           ),
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 6,
@@ -37,23 +40,26 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: .7,
           child: Text(
-            'Rudyard Kipling',
+            book.authorName ?? "",
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
             ),
+            textAlign: TextAlign.center,
           ),
         ),
-        const SizedBox(
-          height: 18,
-        ),
-        const BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
+        // const SizedBox(
+        //   height: 18,
+        // ),
+        // const BookRating(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        // ),
         const SizedBox(
           height: 37,
         ),
-        const BooksAction(),
+        BooksAction(
+          book: book,
+        ),
       ],
     );
   }

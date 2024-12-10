@@ -3,7 +3,6 @@ import 'package:bookly_clear_arch/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../manger/newest_books_cubit/newest_books_cubit.dart';
-import 'newest_books_list_view.dart';
 import 'custom_app_bar.dart';
 import 'featured_books_list_view_bloc_consumer.dart';
 
