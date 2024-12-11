@@ -9,8 +9,10 @@ part 'search_for_books_state.dart';
 class SearchForBooksCubit extends Cubit<SearchForBooksState> {
   SearchForBooksCubit(this.searchForBooksUseCase)
       : super(SearchForBooksInitial());
+  late String q;
   final SearchForBooksUseCase searchForBooksUseCase;
-  Future<void> fetchNewestBooks({int pageNumber = 0, required String q}) async {
+  Future<void> searchForBooks({int pageNumber = 0, required String q}) async {
+    this.q = q;
     if (pageNumber == 0) {
       emit(SearchForBooksLoading());
     } else {
@@ -24,7 +26,11 @@ class SearchForBooksCubit extends Cubit<SearchForBooksState> {
         emit(SearchForBooksPaginationFailure(failure.massege));
       }
     }, (books) {
-      emit(SearchForBooksSuccess(books));
+      if (pageNumber == 0) {
+        emit(SearchForBooksSuccess(books));
+      } else {
+        emit(SearchForBooksPaginationSuccess(books));
+      }
     });
   }
 }

@@ -7,6 +7,12 @@ class SearchForBooksInitial extends SearchForBooksState {}
 
 class SearchForBooksPaginationLoading extends SearchForBooksInitial {}
 
+class SearchForBooksPaginationSuccess extends SearchForBooksInitial {
+  final List<BookEntity> books;
+
+  SearchForBooksPaginationSuccess(this.books);
+}
+
 class SearchForBooksPaginationFailure extends SearchForBooksInitial {
   final String errMessage;
 
